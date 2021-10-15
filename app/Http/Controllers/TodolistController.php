@@ -27,4 +27,18 @@ class TodolistController extends Controller
    $todo->save();
    return redirect('/');
 }
+public function edit($id){
+          
+   return view('edit_todo')->with('TodoArr_name',todolist::find($id));
+}
+
+public function edit_submit(Request $req, $id){
+
+ 
+   $todo = todolist::find($id);
+   $todo->name = $req->input('name');
+   $todo->save();
+   return redirect('/');
+}
+
 }
