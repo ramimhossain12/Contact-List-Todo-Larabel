@@ -15,4 +15,16 @@ class TodolistController extends Controller
       todolist::destroy(array('id',$id));
         return redirect('/');
    }
+   public function create(){
+      return view('createView');
+  }
+
+  public function todo_submit(Request $req){
+        
+
+   $todo = new todolist;
+   $todo->name = $req->input('name');
+   $todo->save();
+   return redirect('/');
+}
 }
