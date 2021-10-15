@@ -10,4 +10,9 @@ class TodolistController extends Controller
    public function showAllData(){
     return view('fetchedData')->with('TodoArr',todolist::all());
    }
+
+   public function delete($id){
+      todolist::destroy(array('id',$id));
+        return redirect('/');
+   }
 }

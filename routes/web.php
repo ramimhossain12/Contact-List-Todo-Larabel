@@ -14,3 +14,4 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/','App\Http\Controllers\TodolistController@showAllData');
+Route::get('delete/{id}','App\Http\Controllers\TodolistController@delete');
